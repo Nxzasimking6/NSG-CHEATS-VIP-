@@ -34,9 +34,15 @@
             background: linear-gradient(45deg, #00ff00, #00cc00); color: black;
             font-weight: bold; border: none; padding: 18px 60px; font-size: 1.6em;
             border-radius: 50px; cursor: pointer; margin-top: 25px;
-            box-shadow: 0 0 40px rgba(0,255,0,0.8); transition: 0.4s;
+            box-shadow: 0 0 40px rgba(0,255,0,0.8); transition: 0.4s; width: 100%;
         }
         .login-btn:hover { transform: scale(1.15); box-shadow: 0 0 60px rgba(0,255,0,1); }
+
+        /* Get Key বাটন স্টাইল */
+        .getkey-btn {
+            background: linear-gradient(45deg, #00cc00, #009900) !important;
+            margin-top: 18px !important;
+        }
 
         /* প্রোগ্রেস ওভারলে – গ্রিন */
         #progressOverlay {
@@ -115,16 +121,19 @@
 </head>
 <body>
 
-    <!-- লগইন (নতুন পাসওয়ার্ড দিলাম) -->
+    <!-- লগইন -->
     <div id="loginOverlay">
         <div class="login-box">
             <h2>NSG VIP ACCESS</h2>
             <input type="text" id="username" placeholder="Username">
             <input type="password" id="password" placeholder="Password">
             <button class="login-btn" onclick="checkLogin()">Enter VIP Zone</button>
-            <a href="https://t.me/NSG_CHEATS">
-    <button>GET KEY </button>
+
+            <!-- এখানে নতুন Get Key বাটন (গুগল ওপেন করবে) -->
+            <a href="https://linksgo.in/ocaVkI" target="_blank">
+                <button class="login-btn getkey-btn">Get Key</button>
             </a>
+
             <p style="margin-top:20px; color:#00ff99; font-size:1.1em;">Hint: user / pass</p>
         </div>
     </div>
@@ -182,7 +191,7 @@
     </div>
 
     <script>
-        // নতুন লগইন: nsg / 2026
+        // ল, লগইন চেক (nsg / 2026)
         function checkLogin() {
             const user = document.getElementById('username').value.trim().toLowerCase();
             const pass = document.getElementById('password').value;
@@ -190,7 +199,7 @@
                 document.getElementById('loginOverlay').style.display = "none";
                 document.getElementById('mainContent').style.display = "block";
             } else {
-                alert("Wrong Credentials!\nTry: user / pass");
+                alert("Wrong Credentials!\nTry: nsg / 2026");
                 document.getElementById('username').value = "";
                 document.getElementById('password').value = "";
             }
