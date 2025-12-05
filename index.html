@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSG CHEATS VIP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: linear-gradient(135deg, #000000, #001a00, #000000);
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        /* লগইন – গ্রিন থিম */
+        #loginOverlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.96); display: flex; align-items: center; justify-content: center; z-index: 9999;
+        }
+        .login-box {
+            background: rgba(0,255,0,0.08); backdrop-filter: blur(15px);
+            border: 3px solid #00ff00; border-radius: 25px; padding: 50px 35px;
+            width: 90%; max-width: 420px; box-shadow: 0 0 70px rgba(0,255,0,0.8);
+        }
+        .login-box h2 { color: #00ff00; font-size: 2.8em; margin-bottom: 35px; text-shadow: 0 0 30px #00ff00; }
+        .login-box input {
+            width: 100%; padding: 18px; margin: 15px 0; border: 2px solid #00ff00;
+            border-radius: 15px; background: rgba(0,255,0,0.1); color: white; font-size: 1.3em;
+        }
+        .login-btn {
+            background: linear-gradient(45deg, #00ff00, #00cc00); color: black;
+            font-weight: bold; border: none; padding: 18px 60px; font-size: 1.6em;
+            border-radius: 50px; cursor: pointer; margin-top: 25px;
+            box-shadow: 0 0 40px rgba(0,255,0,0.8); transition: 0.4s;
+        }
+        .login-btn:hover { transform: scale(1.15); box-shadow: 0 0 60px rgba(0,255,0,1); }
+
+        /* প্রোগ্রেস ওভারলে – গ্রিন */
+        #progressOverlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.98); display: none; align-items: center; justify-content: center;
+            z-index: 99999; flex-direction: column;
+        }
+        .progress-box {
+            background: rgba(0,255,0,0.1); backdrop-filter: blur(20px);
+            border: 3px solid #00ff00; border-radius: 30px; padding: 60px;
+            width: 90%; max-width: 550px; box-shadow: 0 0 80px rgba(0,255,0,0.9);
+        }
+        .progress-box h3 { color: #00ff00; font-size: 2.5em; margin-bottom: 35px; text-shadow: 0 0 30px #00ff00; }
+        .progress-bar { width: 100%; height: 25px; background: rgba(255,255,255,0.15);
+            border-radius: 15px; overflow: hidden; margin: 35px 0; border: 2px solid #00ff00; }
+        .progress-fill {
+            width: 0%; height: 100%; background: linear-gradient(90deg, #00ff00, #00cc00);
+            border-radius: 15px; box-shadow: 0 0 30px #00ff00; transition: width 0.5s;
+        }
+        #countdown { font-size: 4.5em; color: #00ff00; font-weight: bold; text-shadow: 0 0 40px #00ff00, 0 0 80px #00ff00; }
+        .status-text { font-size: 1.6em; margin-top: 25px; color: #00ff00; font-weight: bold; }
+
+        /* মেইন কনটেন্ট – গ্রিন */
+        .site-name {
+            padding: 60px 20px 15px; font-size: 6em; font-weight: bold;
+            color: #00ff00; text-shadow: 0 0 60px #00ff00, 0 0 120px #00ff00;
+            letter-spacing: 15px; animation: glow 2s infinite alternate;
+        }
+        @keyframes glow { from { text-shadow: 0 0 40px #00ff00; } to { text-shadow: 0 0 100px #00ff00, 0 0 160px #00ff00; } }
+
+        .logo-section img {
+            width: 380px; filter: drop-shadow(0 0 60px #00ff00);
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-35px); } }
+
+        .intro { font-size: 1.7em; max-width: 950px; margin: 50px auto 70px; color: #ccffcc; line-height: 2; }
+
+        .download-box {
+            background: rgba(0,255,0,0.12); backdrop-filter: blur(15px);
+            border: 3px solid #00ff00; border-radius: 25px; padding: 50px;
+            margin: 50px auto; max-width: 850px;
+            box-shadow: 0 0 70px rgba(0,255,0,0.8);
+        }
+        .download-box h2 {
+            color: #00ff00; font-size: 3em; margin-bottom: 40px;
+            text-shadow: 0 0 30px #00ff00;
+        }
+        .download-list a {
+            display: block; background: linear-gradient(45deg, #00ff00, #00cc00);
+            color: black !important; padding: 30px; margin: 22px 0;
+            border-radius: 20px; font-size: 1.8em; font-weight: bold;
+            text-decoration: none; box-shadow: 0 15px 40px rgba(0,255,0,0.7);
+            transition: all 0.4s; cursor: pointer;
+        }
+        .download-list a:hover {
+            transform: translateY(-18px); box-shadow: 0 35px 70px rgba(0,255,0,1);
+        }
+
+        .ad-note {
+            background: rgba(0,255,0,0.3); border: 4px solid #00ff00;
+            color: #ffffff; padding: 45px; margin: 90px auto;
+            max-width: 900px; border-radius: 30px; font-size: 2em;
+            font-weight: bold; box-shadow: 0 0 50px rgba(0,255,0,0.8);
+        }
+
+        /* ফুটার – গ্রিন */
+        footer { padding: 80px 20px 60px; background: rgba(0,0,0,0.9); }
+        .social a { color: #00ff00; font-size: 4.5rem; margin: 0 40px; transition: 0.5s; }
+        .social a:hover { color: #00ff99; transform: scale(1.5) rotate(20deg); }
+        footer p {
+            margin-top: 40px; font-size: 2.5rem; color: #00ff00;
+            text-shadow: 0 0 30px #00ff00; font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- লগইন (নতুন পাসওয়ার্ড দিলাম) -->
+    <div id="loginOverlay">
+        <div class="login-box">
+            <h2>NSG VIP ACCESS</h2>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button class="login-btn" onclick="checkLogin()">Enter VIP Zone</button>
+            <p style="margin-top:20px; color:#00ff99; font-size:1.1em;">Hint: nsg / 2026</p>
+        </div>
+    </div>
+
+    <!-- প্রোগ্রেস ওভারলে -->
+    <div id="progressOverlay">
+        <div class="progress-box">
+            <h3>Generating Secure Link...</h3>
+            <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            <div id="countdown">8</div>
+            <div class="status-text">Please wait securely <span id="dots">...</span></div>
+        </div>
+    </div>
+
+    <!-- মেইন কনটেন্ট -->
+    <div id="mainContent" style="display:none;">
+        <div class="site-name">NSG CHEATS VIP</div>
+        <div class="logo-section">
+            <img src="https://i.supaimg.com/bf217bd0-d1af-4e86-b158-6336007525d6.png" alt="NSG Logo">
+        </div>
+
+        <div class="content">
+            <p class="intro">
+                হ্যালো বন্ধুরা! এখানে তোমাদের জন্য Free Fire এর সবচেয়ে পাওয়ারফুল VIP চিটস, অ্যান্টিব্যান কনফিগ, হেডশট হ্যাক — সব ১০০% ওয়ার্কিং এবং ফ্রি!
+            </p>
+
+            <div class="download-box">
+                <h2>My All VIP Files</h2>
+                <div class="download-list">
+                    <a onclick="startDownload('https://www.mediafire.com/file/mhu4r8oezxfd502/DRAG_HEADSHOT_METADATA.zip/file')">NSG VIP HEADSHOT HACK</a>
+                    <a onclick="startDownload('https://www.mediafire.com/file/qk6uxkajh3jq1tg/Free_Fire_MAX_2.117.1_2019116013.apk/file')">NSG ANTIBAN CONFIG 2025</a>
+                    <a onclick="startDownload('https://www.mediafire.com/file/3vz61d3vxwvvizg/Free+Fire+1.118.1_2019119026.apk/file')">NSG AUTO HEADSHOT MENU</a>
+                    <a onclick="startDownload('https://www.mediafire.com/file/2hjsvxqvu0xw11t/Br_Mods_Free_Version.zip/file')">NSG VIP BR MODS</a>
+                    <a onclick="startDownload('https://www.mediafire.com/file/e6iorgiouotgs8q/Astute+Beta+2.117.1_2019116013.apk/file')">NSG PROXY + BYPASS</a>
+                    <a onclick="startDownload('https://www.mediafire.com/file/1eulf1dnpmn9575/Free_Fire_MAX_2.117.1_2019116013.apk/file')">NSG DRIP CLIENT VIP</a>
+                    <a onclick="startDownload('https://www.mediafire.com/file/1ga0mz30pxm9nuz/TOM_FF_600%25_MAGIC_BULLET_METADATA_FILE.zip/file')">NSG MAGIC BULLET PRO</a>
+                    <a onclick="startDownload('https://www.mediafire.com/file/3ls3cdjywpiy5ph/ALL+MAP+WALL+HACK.zip/file?dkey=lb52bn09p85&r=242')">NSG OB51 WELL HACKS</a>
+                    <a onclick="startDownload('https://www.dropbox.com/scl/fi/4p3u50ybgl1iqotqu2d33/Free-Fire-MAX-2.117.1_2019116013.apk?rlkey=ro3pgc5u7heifbwae6f3gnjso&st=l54pv32w&dl=1')">NSG BRUTEL FRAFF</a>
+                </div>
+            </div>
+
+            <div class="ad-note">
+                ক্লিক করো → ৮ সেকেন্ড ওয়েট → অটো ডাউনলোড শুরু!
+            </div>
+        </div>
+
+        <footer>
+            <div class="social">
+                <a href="https://t.me/Zasim_YTx5" target="_blank"><i class="fab fa-telegram"></i></a>
+                <a href="https://youtube.com/@zasim_yt_1" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://discord.gg/5QAVzvMG5" target="_blank"><i class="fab fa-discord"></i></a>
+            </div>
+            <p>© 2025 ZASIM Legend Never Die<br>Judge Me When You're Perfect</p>
+        </footer>
+    </div>
+
+    <script>
+        // নতুন লগইন: nsg / 2026
+        function checkLogin() {
+            const user = document.getElementById('username').value.trim().toLowerCase();
+            const pass = document.getElementById('password').value;
+            if (user === "nsg" && pass === "2026") {
+                document.getElementById('loginOverlay').style.display = "none";
+                document.getElementById('mainContent').style.display = "block";
+            } else {
+                alert("Wrong Credentials!\nTry: nsg / 2026");
+                document.getElementById('username').value = "";
+                document.getElementById('password').value = "";
+            }
+        }
+
+        // প্রোগ্রেস + কাউন্টডাউন
+        let timer;
+        function startDownload(url) {
+            document.getElementById('progressOverlay').style.display = "flex";
+            document.getElementById('progressFill').style.width = "0%";
+            let sec = 8;
+            document.getElementById('countdown').textContent = sec;
+
+            timer = setInterval(() => {
+                sec--;
+                document.getElementById('countdown').textContent = sec;
+                document.getElementById('progressFill').style.width = (8 - sec) * 12.5 + "%";
+
+                if (sec <= 0) {
+                    clearInterval(timer);
+                    setTimeout(() => { window.location.href = url; }, 800);
+                }
+            }, 1000);
+        }
+
+        // এন্টার চাপলে লগইন
+        document.addEventListener("keypress", e => { if (e.key === "Enter") checkLogin(); });
+    </script>
+</body>
+</html>
