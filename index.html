@@ -197,11 +197,11 @@
         function checkLogin() {
             const user = document.getElementById('username').value.trim().toLowerCase();
             const pass = document.getElementById('password').value;
-            if (user === "nsg" && pass === "2026") {
+            if (user === "nx" && pass === "zasim") {
                 document.getElementById('loginOverlay').style.display = "none";
                 document.getElementById('mainContent').style.display = "block";
             } else {
-                alert("Wrong Credentials!\nTry: nsg / 2026");
+                alert("Wrong Credentials!\nTry: user / pass");
                 document.getElementById('username').value = "";
                 document.getElementById('password').value = "";
             }
